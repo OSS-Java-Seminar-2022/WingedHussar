@@ -7,7 +7,7 @@ Flight management system
 * [Features](#features)
 * [Technologies](#technologies)
 * [Database Model](#database-model)
-* [Authors](#authors)
+* [Members](#members)
 
 ## General Info
 
@@ -17,7 +17,7 @@ Flight managment system is a system that's used for booking flights and luggage 
 
 ### User Management
 - Roles:
-    - passenger
+    - Passenger
     - Admin
 - Registration and login
 - Edit and update user data
@@ -41,7 +41,7 @@ Flight managment system is a system that's used for booking flights and luggage 
 
 ## Database Model
 
-{{TO-DO}}
+On the way
 
 ## Members
 * [Hrvoje Ćukušić](https://github.com/HrvojeCukusicOSS)
