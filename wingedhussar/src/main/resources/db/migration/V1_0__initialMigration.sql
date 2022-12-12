@@ -28,7 +28,7 @@ CREATE TABLE luggage
 CREATE TABLE `user-flights`
 (
     id         BIGINT       NOT NULL,
-    class      VARCHAR(255) NULL,
+    flight_class      VARCHAR(255) NULL,
     seat       VARCHAR(255) NULL,
     price      FLOAT        NOT NULL,
     discount   FLOAT        NOT NULL,

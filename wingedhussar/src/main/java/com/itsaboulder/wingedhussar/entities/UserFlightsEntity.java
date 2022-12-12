@@ -18,7 +18,7 @@ public class UserFlightsEntity {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long Id;
 
-    private String Class;
+    private String FlightClass;
     private String Seat;
     private float Price;
     private float Discount;

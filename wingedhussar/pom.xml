@@ -62,6 +62,10 @@
 			<artifactId>flyway-core</artifactId>
 			<version>9.8.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-mysql</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
