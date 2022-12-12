@@ -41,7 +41,7 @@ Flight managment system is a system that's used for booking flights and luggage 
 
 ## Database Model
 
-![](DataChart.png)
+![](DataChart.svg)
 
 ## Members
 * [Hrvoje Ćukušić](https://github.com/HrvojeCukusicOSS)
