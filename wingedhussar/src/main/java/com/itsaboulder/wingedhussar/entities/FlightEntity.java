@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.Instant;
-import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -25,14 +24,9 @@ public class FlightEntity {
     private String Gate;
     private String Remarks;
 
-    @OneToOne(mappedBy = "flight")
-    private InvoiceEntity Invoice;
+    @OneToMany(mappedBy="Flight")
+    private Set<InvoiceEntity> Invoice;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "Passenger_Flight",
-            joinColumns = { @JoinColumn(name = "Flight_id") },
-            inverseJoinColumns = { @JoinColumn(name = "Passenger_id") }
-    )
-    Set<UserEntity> Passengers = new HashSet<>();
+    @OneToMany(mappedBy="Flight")
+    private Set<UserFlightsEntity> UserFlights;
 }

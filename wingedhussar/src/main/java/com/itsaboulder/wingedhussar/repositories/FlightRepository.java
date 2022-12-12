@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FlightRepository extends JpaRepository<FlightEntity, Long> {
-    void deleteFlightEntityById(Long id);
 }

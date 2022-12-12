@@ -26,6 +26,6 @@ public class UserEntity {
     @OneToMany(mappedBy="User")
     private Set<InvoiceEntity> Invoices;
 
-    @ManyToMany(mappedBy = "Passengers")
-    private Set<FlightEntity> Flights = new HashSet<>();
+    @OneToMany(mappedBy="User")
+    private Set<UserFlightsEntity> UserFlights;
 }

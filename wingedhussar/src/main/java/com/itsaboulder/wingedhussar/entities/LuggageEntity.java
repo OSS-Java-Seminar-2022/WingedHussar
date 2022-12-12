@@ -5,24 +5,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "invoices")
-public class InvoiceEntity {
+@Table(name = "luggage")
+public class LuggageEntity {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long Id;
 
-    private float FullAmount;
+    private float Weight;
 
-    @ManyToOne
-    @JoinColumn(name="user_id", nullable=false)
-    private UserEntity User;
-
-    @ManyToOne
-    @JoinColumn(name="flight_id", nullable=false)
-    private FlightEntity Flight;
+    @OneToMany(mappedBy="Luggage")
+    private Set<UserFlightsEntity> UserFlights;
 }
