@@ -39,4 +39,9 @@ public class UserService implements IUserService {
     public void encodePassword(UserEntity userEntity, UserDto user) {
         userEntity.setPassword(passwordEncoder.encode(user.getPassword()));
     }
+
+    @Override
+    public void login(UserDto user) {
+
+    }
 }

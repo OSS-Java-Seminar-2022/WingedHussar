@@ -18,7 +18,7 @@ public class UserController {
         model.addAttribute("UserRegistration", userDto);
         return "register";
     }
-    @PostMapping("/register/new")
+    @PostMapping("/register_process")
     public String userRegistration(UserDto userDto, Model model){
         try {
             userDto.setRole("passenger");
@@ -27,6 +27,16 @@ public class UserController {
             model.addAttribute("registrationForm", userDto);
             return "register";
         }
+        return "register_success";
+    }
+
+    @GetMapping("/login")
+    public String viewLoginPage(){
+        return "login";
+    }
+
+    @PostMapping("/login_process")
+    public String userLogin(UserDto userDto,Model model){
         return "index";
     }
 }

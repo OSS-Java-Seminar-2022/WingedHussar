@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-body register-card-body">
             <p class="login-box-msg">Register a new account</p>
-            <form action="#" th:action="@{/register/new}" th:object="${UserRegistration}" method="post">
+            <form action="#" th:action="@{/register_process}" th:object="${UserRegistration}" method="post">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" th:field="*{username}" name="username" placeholder="Username">
 
