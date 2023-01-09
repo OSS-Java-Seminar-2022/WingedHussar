@@ -16,7 +16,7 @@ import java.util.Set;
 @Table(name = "luggage")
 public class LuggageEntity {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long Id;
 
     private float Weight;

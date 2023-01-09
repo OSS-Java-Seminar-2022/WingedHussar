@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UserMapper {
-    public UserDto mapEntityToDto(UserEntity userEntity) {
+    static UserDto mapEntityToDto(UserEntity userEntity) {
 
         var userDto = new UserDto();
         userDto.setId(userEntity.getId());
@@ -19,7 +19,7 @@ public class UserMapper {
         return userDto;
     }
 
-    public UserEntity mapDtoToEntity(UserDto userDto) {
+    static UserEntity mapDtoToEntity(UserDto userDto) {
 
         var userEntity = new UserEntity();
         userEntity.setId(userDto.getId());

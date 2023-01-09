@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "invoices")
 public class InvoiceEntity {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long Id;
 
     private float FullAmount;

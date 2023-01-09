@@ -15,7 +15,7 @@ import java.util.Set;
 @Table(name = "flights")
 public class FlightEntity {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long Id;
 
     private String From;

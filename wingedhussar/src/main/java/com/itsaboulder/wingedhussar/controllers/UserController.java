@@ -3,35 +3,30 @@ package com.itsaboulder.wingedhussar.controllers;
 import com.itsaboulder.wingedhussar.dtos.UserDto;
 import com.itsaboulder.wingedhussar.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-
+@Controller
 public class UserController {
     @Autowired
     private UserService userService;
 
     @GetMapping("/register")
-    public String register(final Model model){
-        model.addAttribute("userData", new UserDto());
-        return "account/register";
+    public String viewRegisterPage(Model model){
+        var userDto = new UserDto();
+        model.addAttribute("UserRegistration", userDto);
+        return "register";
     }
-
-    @PostMapping("/register")
-    public String userRegistration(final @Valid UserDto userDto, final BindingResult bindingResult, final Model model){
-        if(bindingResult.hasErrors()){
-            model.addAttribute("registrationForm", userDto);
-            return "account/register";
-        }
+    @PostMapping("/register/new")
+    public String userRegistration(UserDto userDto, Model model){
         try {
+            userDto.setRole("passenger");
             userService.register(userDto);
         }catch (Exception e){
-            bindingResult.rejectValue("email", "userData.email","An account already exists for this email.");
             model.addAttribute("registrationForm", userDto);
-            return "account/register";
+            return "register";
         }
-        return "redirect/starter";
+        return "index";
     }
 }
