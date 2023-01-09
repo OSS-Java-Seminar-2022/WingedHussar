@@ -21,6 +21,9 @@ public class UserEntity {
 
     private String FirstName;
     private String LastName;
+    private String Username;
+    private String Email;
+    private String Password;
     private String Role;
 
     @OneToMany(mappedBy="User")
