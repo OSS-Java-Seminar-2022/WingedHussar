@@ -2,7 +2,10 @@ package com.itsaboulder.wingedhussar.controllers;
 
 import com.itsaboulder.wingedhussar.dtos.UserDto;
 import com.itsaboulder.wingedhussar.services.UserService;
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,8 +38,8 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping("/login_process")
-    public String userLogin(UserDto userDto,Model model){
-        return "index";
+    @GetMapping("/logout")
+    public String logout(){
+        return "redirect:/";
     }
 }
