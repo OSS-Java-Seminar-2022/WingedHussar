@@ -15,6 +15,7 @@
 <p>
     <th:block sec:authorize="isAuthenticated()">
         <span sec:authentication="principal.username"></span>
+        <button class="btn btn-warning" id="logoutLink">Logout</button>
     </th:block>
 
     <th:block sec:authorize="!isAuthenticated()">

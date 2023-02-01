@@ -2,6 +2,7 @@ package com.itsaboulder.wingedhussar.controllers;
 
 import com.itsaboulder.wingedhussar.dtos.UserDto;
 import com.itsaboulder.wingedhussar.services.UserService;
+import lombok.AllArgsConstructor;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -11,8 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@AllArgsConstructor
 public class UserController {
-    @Autowired
     private UserService userService;
 
     @GetMapping("/register")
@@ -36,10 +37,5 @@ public class UserController {
     @GetMapping("/login")
     public String viewLoginPage(){
         return "login";
-    }
-
-    @GetMapping("/logout")
-    public String logout(){
-        return "redirect:/";
     }
 }

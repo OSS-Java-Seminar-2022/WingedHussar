@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Data
@@ -20,9 +21,10 @@ public class FlightEntity {
 
     private String From;
     private String To;
-    private Instant Time;
+    private LocalDateTime DepartureDateTime;
     private String Gate;
     private String Remarks;
+    private String Carrier;
 
     @OneToMany(mappedBy="Flight")
     private Set<InvoiceEntity> Invoice;

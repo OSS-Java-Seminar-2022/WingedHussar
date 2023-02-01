@@ -9,11 +9,11 @@ public class FlightMapper {
     public FlightDto mapEntityToDto(FlightEntity flightEntity) {
 
         var flightDto = new FlightDto();
-        flightDto.setId(flightEntity.getId());
         flightDto.setFrom(flightEntity.getFrom());
         flightDto.setTo(flightEntity.getTo());
         flightDto.setGate(flightEntity.getGate());
-        flightDto.setTime(flightEntity.getTime());
+        flightDto.setDepartureDateTime(flightEntity.getDepartureDateTime());
+        flightDto.setCarrier(flightEntity.getCarrier());
         flightDto.setRemarks(flightEntity.getRemarks());
 
         return flightDto;
@@ -22,10 +22,10 @@ public class FlightMapper {
     public FlightEntity mapDtoToEntity(FlightDto flightDto) {
 
         var flightEntity = new FlightEntity();
-        flightEntity.setId(flightDto.getId());
         flightEntity.setTo(flightDto.getTo());
         flightEntity.setFrom(flightDto.getFrom());
-        flightEntity.setTime(flightDto.getTime());
+        flightEntity.setDepartureDateTime(flightDto.getDepartureDateTime());
+        flightEntity.setCarrier(flightDto.getCarrier());
         flightEntity.setGate(flightDto.getGate());
         flightEntity.setRemarks(flightDto.getRemarks());
 
